@@ -63,6 +63,6 @@ public class Carta {
                 ", custo=" + custo +
                 ", descricao='" + descricao + '\'' +
                 ", precoDollar=" + precoDollar +
-                '}';
+                '}' + "\r\n";
     }
 }
