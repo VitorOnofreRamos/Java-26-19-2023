@@ -67,4 +67,10 @@ public class Colecao {
                 ", cartas=" + cartas +
                 '}';
     }
+
+    public List<Carta> BuscarCartaPorNome(String nome){
+        return this.cartas.stream()
+                .filter(carta -> carta.getNome().toLowerCase()
+                        .contains(nome.toLowerCase())).toList();
+    }
 }
