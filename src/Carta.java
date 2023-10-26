@@ -1,4 +1,5 @@
 public class Carta {
+    private int numero;
     private String nome;
     private int custo;
     private String descricao;
@@ -6,11 +7,20 @@ public class Carta {
 
     public Carta(){}
 
-    public Carta(String nome, int custo, String descricao, double precoDollar) {
+    public Carta(int numero, String nome, int custo, String descricao, double precoDollar) {
+        this.numero = numero;
         this.nome = nome;
         this.custo = custo;
         this.descricao = descricao;
         this.precoDollar = precoDollar;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getNome() {
@@ -48,7 +58,8 @@ public class Carta {
     @Override
     public String toString() {
         return "Carta{" +
-                "nome='" + nome + '\'' +
+                "numero=" + numero +
+                ", nome='" + nome + '\'' +
                 ", custo=" + custo +
                 ", descricao='" + descricao + '\'' +
                 ", precoDollar=" + precoDollar +

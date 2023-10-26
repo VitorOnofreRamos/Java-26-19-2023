@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -41,11 +42,13 @@ public class Colecao {
     public void addCarta(Carta carta){
         this.cartas.add(carta);
         AtualizarPrecoTotal();
+        OrdenarColecao();
     }
 
     public void removeCarta(int posicao){
         this.cartas.remove(posicao);
         AtualizarPrecoTotal();
+        OrdenarColecao();
     }
 
     private void AtualizarPrecoTotal() {
@@ -72,5 +75,9 @@ public class Colecao {
         return this.cartas.stream()
                 .filter(carta -> carta.getNome().toLowerCase()
                         .contains(nome.toLowerCase())).toList();
+    }
+
+    private void OrdenarColecao(){
+        this.cartas.sort(Comparator.comparingInt(Carta::getNumero));
     }
 }
